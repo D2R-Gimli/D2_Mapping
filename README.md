@@ -11,6 +11,9 @@ http://paul.siramy.free.fr/_divers/ds1/doc/index.html
 ### How to Start:
 https://d2mods.info/forum/viewtopic.php?f=81&t=29549
 
+### Warped Titles as preview in browser:
+https://d2mods.info/resources/wt/index.htm
+
 ### Informations about DT1 Files
 https://d2mods.info/forum/viewtopic.php?t=65163
 
