@@ -1,0 +1,11 @@
+Act 5 - Temple 1 / 2
+Expansion/wildtemple/
+
+Halls of Anguish
+Halls of Pain
+Halls of Vaught
+
+
+New Map: TortureHalls
+Size: 125 x 125
+32  1042
