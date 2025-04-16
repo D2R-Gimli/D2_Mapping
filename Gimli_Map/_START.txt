@@ -1,0 +1,18 @@
+Map starting Base:
+----------------------------------------
+Act 5
+Halls of Anguish
+Halls of Pain
+Halls of Vaught
+
+----------------------------------------
+MapName: 	TortureHalls
+Size: 		125 x 125
+ID			32  1042
+			
+----------------------------------------
+DT1 files used:
+Expansion/wildtemple/interior.dt1
+Expansion/town/trees.dt1
+PD2assets/TortureHalls/a5_torture.dt1
+PD2assets/TortureHalls/TortureHalls.dt1
