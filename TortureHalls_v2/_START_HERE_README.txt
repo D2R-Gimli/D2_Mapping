@@ -36,8 +36,9 @@ So it will be more clear which files are used for which map.
 ----------------------------------------
 
 
-
-
+---Testing:---------------------------
+Go in a normal game - act5 and use the new Waypoint "TortureHalls..." :)
+----------------------------------------
 
 
 ARCHIVE BELOW HERE - JUST FOR YOUR INFORMATION
