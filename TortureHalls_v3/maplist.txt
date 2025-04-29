@@ -1,0 +1,3 @@
+TortureHalls1.ds1	TortureHalls1	expansion\map	41	1147
+TortureHalls2.ds1	TortureHalls2	expansion\map	41	1147
+TortureHalls3.ds1	TortureHalls3	expansion\map	41	1147
