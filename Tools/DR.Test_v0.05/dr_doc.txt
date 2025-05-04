@@ -1,0 +1,108 @@
+DR. Test, v0.05
+===============
+
+
+Overview :
+----------
+
+This program is an MPQ Resources Tester. It can be used to extract not only 1 file, but also the related files to the one you're currently viewing : for instance, ask to extract a .cof, and you'll be prompted to save not only this .cof but also all the .dcc that this .cof can use, or extract a .ds1 and you can save the .dt1 it's using too. It have also a Mod Making support, as it allow to use a local data\ directory, keeping all the original file structure inside. Another good use of this DR Test : if you're making new dcc, you can see the result without starting the game.
+
+Formats currently supported :
+   * DC6 
+   * DCC
+   * COF
+   * DT1
+   * DS1
+   * PL2
+
+
+Menu commands :
+---------------
+
+File
+   * Local Path : Browse the Local Directory
+   * pathd2.mpq : Browse the Patch_D2.mpq
+   * d2exp.mpq  : Browse the D2Exp.mpq
+   * d2data.mpq : Browse the D2Data.mpq
+   * d2char.mpq : Browse the D2Char.mpq
+   * Save to Local File : Extract the current file into the Local Directory
+   * Exit : as usual
+
+You can only Browse 1 MPQ at a time. Choosing patchd2.mpq / d2exp.mpq / d2data.mpq / d2char.mpq will make DR. Tester read the corresponding MPQ from your Diablo II directory. Choosing 'Local Path' will make DR. Tester read the local directory there's in its working directory.
+
+Note : when choosing 'Local Path', DR. Tester will read the file '(listfile)' (without the quotes) to know exactly what are the file to browse in that data\ directory. This is a simple text file, exactly the same as MpqView and MpqEdit are using. If you don't have such a file, you can use the 'Options / Rebuild Local List' command to make it, it'll parse *all* files that are in the local data\ directory and sub-direcoties (even if not D2 related), and will add them to this (listfile). You'll be able then to use the 'File / Local Path' command to browse the files in the local data\ directory.
+
+
+Options
+   * Use Local Files    : use the files in the data\ directory instead of the one in the MPQ
+                          (like when making a mod with the -direct -txt command)
+
+   * Update frames      : This option makes the frame info and combo-box update during animations.
+                          On slower systems this is a bad thing.
+
+   * Background Color   : usefull when viewing dark animations / maps.
+   * Rebuild Local List : see the precedent Note about 'Local Path'
+   * Use List 0
+   * Use List 1
+   * Use List 2
+   * Use List 3
+
+Note : the 'Use List x' command can be very helpfull when browsing a MPQ : it'll make DR. Tester using alternates file list, not using the internal list in the MPQ. That way you can view only the files you really need.
+
+For instance, you want to test the Amazon animations with some of your own dcc, then you'll make a (listfile) which will have only the files under the data\global\chars\am\ directory. Then you can browse the d2char.mpq and you'll see ONLY that few files. Put a list file named '(listfile).x' (without the quotes) in the working directory. x is a number between 0 and 3 for telling which MPQ use it.
+   * 0 : patch_d2.mpq (for 'Use List File 0' command)
+   * 1 : d2exp.mpq    (for 'Use List File 1' command)
+   * 2 : d2data.mpq   (for 'Use List File 2' command)
+   * 3 : d2char.mpq   (for 'Use List File 3' command)
+
+
+
+User Interface :
+----------------
+Let's take an exemple. Choose the file data\global\CHARS\AM\COF\ama11hs.cof and an Amazon will appear.
+
+In that window you can click on the Left mouse button, keep it pressed, and move the mouse : you're dragging the image.
+
+Above that window, you can edit the 'Direction' and 'Frame' combo boxes to set exactly which sprite is draw.
+
+Click on the 'Run F' (Run Frames) button, and the Amazon will cycle her animation. You can click on the button again to stop it.
+
+Click on the Display window (where the Amazon is), click on the Right mouse button, keep it pressed, and move the mouse to the Left or the Right : you're changing the Direction of the animation. Combined with the 'Run F' button activated, it's pretty usefull to see the Amazon moving in all her directions without difficulty.
+
+The 'Run D' button stand for 'Run Directions' but don't works yet.
+
+Now you see 3 buttons, a '-', a 'Zoom x 1' and a '+'. By cliking on the '-' and '+' buttons you're changing the value of the zoom.
+
+At any moment, pressing Ctrl + Home will set the Sprite / Animation / Map back to the center of the Display window, usefull to know if you have lost the sprite by dragging & zooming.
+
+The 'Zoom' button can be toggled : you'll cycle thru 'Frame', 'Direction' & 'Zoom' controls.
+
+Under these buttons there's the File Selector. You can type your own file or use the Lift.
+
+
+
+Now, the Right area of DR. Tester.
+
+In the case of a .COF, you'll be able to control exactly what dcc will be use for each Layer. Click on a code in the Layer window to select this Layer, then select a code in the Class window to affect this body part animation to this layer. DR. Tester automagically show how all the possible choice for each layers. Under these windows, you can read the exact name of the dcc that is used, starting from the Monster / Player Token.
+
+*Note * Translucent layers do not display correctly. I need to add translucent (alpha-blend) drawing functions. Windows doesn't support translucent bmp's (in win98). So don't think your images are bad just because the trans isn't right ;-) // SVR
+
+
+In the case of a .DS1, you'll be able to change the DT1 list the map use. If you're not setting the proper LvlType to the map, you'll see garbage. As for the Level Prest info, if DR. Tester found it in lvlPrest.txt, it'll automagically set it. In the other case, you'll have to try by yourself. Usually the LvlType is related to the Path of the .ds1 in the mpq, so knowing the path you can know the LvlType ID.
+
+Lastly, you can try to view the data\global\palette\ACT1\Pal.PL2 file. This is the file the game use for many, many, many act color effects, mostly unknown. At least the last colormaps are the colors of the texts strings.
+
+*Note* I added an edit control to set the index for text. (mainly because I was looking for the 21 transtbl colors used on items.) You can type in any offset in hex (up to 6b227, which is the actual text color offset) or press the 'Use Frame ->' button to set the text to use the current frame index. // SVR
+
+
+Under these layer and Class window there's Debug Infos.
+
+Under, there's a window that show all the related fies to the file you're viewing. If you're viewing a .cof, it'll show each .dcc that go with that animation, if you're viewing a .ds1 it'll show the .dt1 it used, and so on. That's the list of the files that you'll be prompt to save when asking to save the current file to local directory.
+
+*Note* These files are only the ones in the current MPQ (or local path). If there are additional or supercedent files in patch_d2 or d2exp they won't show up. // SVR
+
+And lastly, there's the Palette / Colormaps controls. Nothing special to say about Palette, it's obvious. Now, the 'Index' and 'Shift' buttons :
+
+'Index' is a list of colormaps the game use when making colors to the items, like Unique or Sets. Click on a .dat file, and you have set a colormap file to use. For instance, in d2data.mpq, choose data\global\items\invhlm.DC6 and chose the Index colormaps Invgrey.dat, now all the Grey pixels will be remap into another colors. That's the litle number you see at the right of the 'Shift' button that tells the final color. Change this Index number, and the Helm change its overall colors accordingly.
+
+'Shift' is a list of the palshift.dat colormaps of the monsters. It's better to use the same Token for the Palshift as the Token of the Monster, be that can be a way to check for new good colormaps for a monster.
